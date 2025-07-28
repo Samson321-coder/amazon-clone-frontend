@@ -6,7 +6,7 @@ import { DataContext } from '../../Components/DataProvider/DataProvider';
 import ProductCard from "../../Components/Product/ProductCard"
 
 function Orders() {
-  const [{ user }, dispatch] = useContext(DataContext);
+  const [{ user }] = useContext(DataContext);
   const [orders, setOrders] = useState([])
   useEffect(() => {
     if (user) {
@@ -33,7 +33,7 @@ function Orders() {
       <section className={classes.container}>
         <div className={classes.orders_container}>
           <h2>Your Orders</h2>
-          {orders?.length==0&&
+          {orders?.length===0&&
           <div style={{padding:"20px"}}> You don't have orders yet.</div>}
           {/* ordered items  */}
           <div>{
